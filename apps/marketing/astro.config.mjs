@@ -8,6 +8,9 @@ import { LOCALES } from "./src/i18n/locales.ts";
 // file tracking does not use this client.
 delete process.env.VP_RUN_NODE_CLIENT_PATH;
 
+// Astro reads this when it records an event, after the config loads, so no CLI telemetry is sent.
+process.env.ASTRO_TELEMETRY_DISABLED = "1";
+
 export default defineConfig({
   site: "https://t3.codes",
   // Vercel 308s `/path/` to `/path` (see vercel.ts), so every internal link and canonical uses one form.

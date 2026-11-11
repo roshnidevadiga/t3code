@@ -29,7 +29,7 @@ export const RuntimeMode = Schema.Literals([
   "full-access",
 ]);
 export type RuntimeMode = typeof RuntimeMode.Type;
-export const DEFAULT_RUNTIME_MODE: RuntimeMode = "full-access";
+export const DEFAULT_RUNTIME_MODE: RuntimeMode = "auto-accept-edits";
 
 const RUNTIME_MODE_RANK: Record<RuntimeMode, number> = {
   "approval-required": 0,

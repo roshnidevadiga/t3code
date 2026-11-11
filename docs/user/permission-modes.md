@@ -7,7 +7,7 @@ on your default mode, open the model picker and choose **Permissions** at its bo
 
 Set the default for new threads in **Settings → Threads → New threads → Permissions**.
 Projects can override the environment default. New threads use this setting rather than the
-mode of the thread you were viewing. The initial default is **Full access**; existing threads
+mode of the thread you were viewing. The initial default is **Auto-accept edits**; existing threads
 and modes you choose in a draft keep their permissions.
 
 | Mode                  | Behavior                                                                              |

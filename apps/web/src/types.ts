@@ -27,7 +27,7 @@ import { videoMimeType } from "@t3tools/shared/video";
 export { videoMimeType } from "@t3tools/shared/video";
 
 export type SessionPhase = "disconnected" | "connecting" | "ready" | "running";
-export const DEFAULT_RUNTIME_MODE: RuntimeMode = "full-access";
+export const DEFAULT_RUNTIME_MODE: RuntimeMode = "auto-accept-edits";
 
 export const DEFAULT_INTERACTION_MODE: ProviderInteractionMode = "default";
 export const DEFAULT_THREAD_TERMINAL_HEIGHT = 280;

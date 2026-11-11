@@ -305,7 +305,7 @@ export function createDraft(
     checkoutPath: "",
     enabled: true,
     startFromOrigin: true,
-    runtimeMode: "full-access",
+    runtimeMode: "auto-accept-edits",
   };
 }
 

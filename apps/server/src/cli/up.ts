@@ -93,8 +93,9 @@ const readSetup = Effect.fn("cli.up.read_setup")(function* () {
 
 /**
  * The routes `t3 up` starts from. With no route flag it asks about every
- * route, starting a machine with no service from T3 Connect. Any route flag
- * means it asks nothing and keeps the routes not named as they are.
+ * route, starting from the current setup; nothing is preselected on a new
+ * machine. Any route flag means it asks nothing and keeps the routes not named
+ * as they are.
  */
 export const planRoutes = (
   setup: { readonly installed: boolean; readonly connect: boolean | null; readonly lan: boolean },
@@ -102,7 +103,7 @@ export const planRoutes = (
 ) => {
   const ask = Option.isNone(flags.connect) && Option.isNone(flags.lan);
   const start = {
-    connect: setup.connect === true || (ask && !setup.installed && setup.connect !== null),
+    connect: setup.connect === true,
     lan: setup.lan,
   };
   return {
@@ -453,7 +454,7 @@ export const upCommand = Command.make("up", {
   ),
   yes: Flag.Boolean("yes").pipe(
     Flag.withDescription(
-      "Ask nothing. Keep the access settings; a new machine gets T3 Connect. A restart stops running agent turns.",
+      "Ask nothing. Keep the access settings; a new machine stays local-only. A restart stops running agent turns.",
     ),
     Flag.withDefault(false),
   ),
